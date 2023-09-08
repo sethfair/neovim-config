@@ -1,3 +1,11 @@
+return {
+  "williamboman/mason.nvim",
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+    "jayp0521/mason-null-ls.nvim",
+  },
+  config =function()
+
 local servers = {
 	"lua_ls",
 	-- "cssls",
@@ -37,8 +45,8 @@ local opts = {}
 
 for _, server in pairs(servers) do
 	opts = {
-		on_attach = require("user.lsp.handlers").on_attach,
-		capabilities = require("user.lsp.handlers").capabilities,
+		on_attach = require("user.plugins.lsp.opts.handlers").on_attach,
+		capabilities = require("user.plugins.lsp.opts.handlers").capabilities,
 	}
 
 	server = vim.split(server, "@")[1]
@@ -50,3 +58,6 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 end
+
+  end
+}

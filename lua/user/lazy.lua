@@ -15,7 +15,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 
-require("lazy").setup({{import = "user.plugins"}}, {
+require("lazy").setup({{import = "user.plugins"}, {import = "user.plugins.lsp"}}, {
   install = {
     colorscheme = { "catppuccin" },
   },
